@@ -73,12 +73,12 @@ describe Board do
     describe "winner" do
       it "tells us X is the winner" do
         @board.should_receive(:player_wins?).with('X').and_return(true)
-        @board.winner.should == 'X Wins'
+        @board.winner.should == 'X'
       end
       it "tells us O is the winner" do
         @board.should_receive(:player_wins?).with('X').and_return(false)
         @board.should_receive(:player_wins?).with('O').and_return(true)
-        @board.winner.should == 'O Wins'
+        @board.winner.should == 'O'
       end
       it "tells us nil is the winner" do
         @board.stub(:player_wins?).and_return(false)

@@ -25,7 +25,7 @@ class Game
   end
 
   def get_move
-    @io.output "-> "
+    @io.outp "-> "
     cell = get_input
       if !@board.move_available?(cell)
         puts "Invalid Move"
@@ -76,7 +76,7 @@ class Game
   end
 
   def play_again
-    @io.output "Do you want to play again?(Yes or No)"
+    @io.outp "Do you want to play again?(Yes or No):"
     if @io.input.downcase =~ /yes/
       system('clear')
       g = Game.new
@@ -88,8 +88,9 @@ class Game
   end
 
   def computer_turn
-   @board.place_move(@computer.make_move(@board), 'O')
-   draw_board
-   check_game_state
+    puts "Thinking......"
+    @board.place_move(@computer.make_move(@board), 'O')
+    draw_board
+    check_game_state
   end
 end

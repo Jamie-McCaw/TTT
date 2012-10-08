@@ -7,4 +7,8 @@ class InputOutput
   def output(message)
     puts message
   end
+
+  def outp(message)
+  	print message
+  end
 end
