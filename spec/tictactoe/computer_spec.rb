@@ -4,13 +4,6 @@ require 'spec_helper'
     let(:board) {Board.new}
     let(:cpu) {Computer.new}
 
-    #describe "make move" do
-    #  it "should pick corner when starting with a blank board" do
-    #    board.place_move(cpu.make_move(board), 'O')
-    #    board.cells[0].should == 'O'
-    #  end
-    #end
-
     describe "make move" do
       it "should pick winning moves horizontally" do
         board.place_move(2, 'O')

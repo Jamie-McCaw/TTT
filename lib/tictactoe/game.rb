@@ -10,7 +10,6 @@ class Game
 
   def start_game
     @io.output "\tTic Tac Toe\n\n"
-    @computer = Computer.new
     until @board.is_game_over?
       start_turn
       cell = get_move

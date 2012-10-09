@@ -1,9 +1,10 @@
 require 'spec_helper'
 describe Game do
 
+  let(:game) { Game.new }
+
   describe "move" do
     it "sets a move on the board" do
-      game = Game.new
       game.move(0)
       game.board.cells[0].should == 'X'
     end
@@ -11,7 +12,6 @@ describe Game do
 
   describe "game_over" do
     it "should return true if a player wins" do
-    game = Game.new
     game.move(0)
     game.move(1)
     game.move(2)
@@ -21,7 +21,6 @@ describe Game do
 
   describe "end_turn" do
     it "should call computer_turn" do
-      game = Game.new
       game.should_receive(:computer_turn)
       game.end_turn
     end
