@@ -23,7 +23,7 @@ class Board
   def available_moves
     moves = 0
     @cells.each do |cell|
-      if cell.to_s =~ /[0-9]/
+      if cell.is_a?(Numeric)
         moves += 1
       end
     end
@@ -32,7 +32,7 @@ class Board
 
   def move_available?(move)
     cell = @cells[move]
-    if cell.to_s =~ /[0-9]/
+    if cell.is_a?(Numeric)
       return true
     else return false
     end
