@@ -1,0 +1,23 @@
+welcome:
+    message: Tic Tac Toe
+
+game:
+    moves:
+        message: Moves Available %1
+        invalid: Invalid Move
+
+    player:
+        turn: It's %1's Turn
+
+    computer:
+        wait: Thinking..
+
+    input:
+        symbol: ->
+
+    over:
+        winner: Player %1 Wins!
+        tie: Tie Game!
+        play_again: Do you want to play again?('Yes' or 'No')
+        exit: Goodbye!
+

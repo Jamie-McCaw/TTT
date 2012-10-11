@@ -15,7 +15,7 @@ describe InputOutput do
     it "puts messages to the screen" do
       test = "Test"
       io.should_receive(:puts).with(test)
-      io.output(test)
+      io.outputs(test)
     end
   end
 end

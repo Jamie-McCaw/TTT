@@ -21,6 +21,9 @@ describe Game do
 
   describe "end_turn" do
     it "should call computer_turn" do
+      my_io = InputOutput.new
+      my_io.stub(:puts_to_screen)
+      game.stub(:io).and_return(nil)
       game.should_receive(:computer_turn)
       game.end_turn
     end

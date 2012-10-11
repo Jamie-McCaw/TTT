@@ -4,11 +4,16 @@ class InputOutput
     gets.chomp
   end
 
-  def output(message)
+  def outputs(message)
     puts message
   end
 
-  def outp(message)
+  def outputs_header(message)
+    puts "      #{message}\n"
+  end
+
+
+  def prints(message)
   	print message
   end
 end

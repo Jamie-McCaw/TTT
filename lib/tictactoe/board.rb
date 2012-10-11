@@ -39,12 +39,9 @@ class Board
   end
 
   def place_move(move, sym)
-    if sym == '*'
-      @cells[move] = move
+    if move_available?(move)
+      @cells[move] = sym
     end
-      if move_available?(move)
-        @cells[move] = sym
-      end
   end
 
   def is_game_over?
