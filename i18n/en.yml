@@ -1,5 +1,20 @@
 welcome:
-    message: Tic Tac Toe
+    message: Welcome to Tic Tac Toe!
+
+menu:
+    game:
+        choose: Choose your game type.
+        one: 1. Player vs. Player
+        two: 2. Player vs, Computer
+        three: 3. Computer vs. Computer
+
+    language:
+        choose: What Language would you like?
+        one: 1. English
+        two: 2. Spanish
+
+    invalid:
+        choice: Not a valid choice. Defaulting to English.
 
 game:
     moves:
@@ -20,4 +35,3 @@ game:
         tie: Tie Game!
         play_again: Do you want to play again?('Yes' or 'No')
         exit: Goodbye!
-

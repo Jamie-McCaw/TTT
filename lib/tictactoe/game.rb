@@ -1,12 +1,21 @@
 class Game
   attr_accessor :board, :computer
 
-  def initialize
+  def initialize(choice)
+    @menu = Menu.new
     @io = InputOutput.new
     @board = Board.new
     @player = 'X'
-    @computer = Computer.new
-
+    @other_player = 'O'    
+    if choice == '1'
+      start_game
+    elsif choice == '2'
+      @computer = Computer.new('O')
+      @computer_sym = 'O'
+      start_game
+    elsif choice == '3'
+      computer_vs_computer
+    end
   end
 
   def start_game
@@ -28,8 +37,12 @@ class Game
   end
 
   def get_cell_from_user
+    if @computer_sym == @player
+      computer_turn
+    else 
     @io.prints t.game.input.symbol
     test_user_input(@io.input)
+    end
   end
 
   def test_user_input(users_input)
@@ -59,7 +72,11 @@ class Game
   def end_turn
     draw_board
     check_game_state
-    computer_turn
+    switch_players
+  end
+
+  def switch_players
+    @player, @other_player = @other_player, @player  
   end
 
   def check_game_state
@@ -87,9 +104,9 @@ class Game
 
   def play_again
     @io.prints t.game.over.play_again
-    if @io.input.downcase =~ /yes/
+    if @io.input.downcase =~ (/yes|si/)
       system('clear')
-      Game.new.start_game
+      Menu.new.game_setup
     else
       @io.outputs t.game.over.exit
       exit(0)
@@ -98,8 +115,21 @@ class Game
 
   def computer_turn
     @io.outputs t.game.computer.wait
-    @board.place_move(@computer.make_move(@board), 'O')
-    draw_board
-    check_game_state
+    move = @computer.make_move(@board)
+    @board.place_move(move, @computer_sym)
+    return move
+  end
+
+  def computer_vs_computer
+    computer1 = Computer.new('X')
+    computer2 = Computer.new('O')
+    until @board.is_game_over?
+      draw_board
+      @io.outputs t.game.computer.wait
+      @board.place_move(computer1.make_move(@board), 'X')
+      @board.place_move(computer2.make_move(@board), 'O')
+      draw_board
+      check_game_state
+    end
   end
 end

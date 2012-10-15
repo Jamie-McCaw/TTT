@@ -2,7 +2,7 @@ require 'spec_helper'
   describe Computer do
 
     let(:board) {Board.new}
-    let(:cpu) {Computer.new}
+    let(:cpu) {Computer.new('O')}
 
     describe "make move" do
       it "should pick winning moves horizontally" do

@@ -1,5 +1,7 @@
 require '../tictactoe'
 
 system('clear')
-game = Game.new
-game.start_game
+menu = Menu.new
+menu.game_setup
+#game = Game.new
+#game.game_setup

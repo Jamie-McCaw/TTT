@@ -1,7 +1,7 @@
 require 'spec_helper'
 describe Game do
 
-  let(:game) { Game.new }
+  let(:game) { Game.new(2) }
 
   describe "move" do
     it "sets a move on the board" do
@@ -24,7 +24,7 @@ describe Game do
       my_io = InputOutput.new
       my_io.stub(:puts_to_screen)
       game.stub(:io).and_return(nil)
-      game.should_receive(:computer_turn)
+      game.should_receive(:switch_players)
       game.end_turn
     end
   end

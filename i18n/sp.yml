@@ -1,0 +1,37 @@
+welcome:
+    message: Bienvenido a Tic Tac Toe!
+
+menu:
+    game:
+        choose: Elija su tipo de juego.
+        one: 1. Jugador contra Jugador
+        two: 2. Jugador contra Computadora
+        three: 3. Computadora contra Computadora
+
+    language:
+        choose: ¿Qué idioma te gustaría?
+        one: 1. Inglés
+        two: 2. español
+
+    invalid:
+        choice: Invalid elección. Incumplimiento al Inglés.
+
+game:
+    move:
+        message: Movimientos Disponibles
+        invalid: Move 'no' válido
+
+    player:
+        turn: Es el turno de %1
+
+    computer:
+        wait: Pensamiento..
+
+    input:
+        symbol: ->
+
+    over:
+        winner: Reproductor gana %1!
+        tie: Ate Juego
+        play_again: ¿Quieres jugar otra vez? ('Sí' o 'No')
+        exit: ¡Adiós!
