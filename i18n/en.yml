@@ -5,8 +5,8 @@ menu:
     game:
         choose: Choose your game type.
         one: 1. Player vs. Player
-        two: 2. Player vs, Computer
-        three: 3. Computer vs. Computer
+        two: 2. Player vs. Computer
+        three: 3. Global Thermonuclear War
 
     language:
         choose: What Language would you like?

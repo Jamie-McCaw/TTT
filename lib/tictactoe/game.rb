@@ -131,4 +131,6 @@ class Game
       check_game_state
     end
   end
+
+  trap(:INT) { exit(0) }
 end

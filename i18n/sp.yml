@@ -6,7 +6,7 @@ menu:
         choose: Elija su tipo de juego.
         one: 1. Jugador contra Jugador
         two: 2. Jugador contra Computadora
-        three: 3. Computadora contra Computadora
+        three: 3. Guerra Termonuclear Global
 
     language:
         choose: ¿Qué idioma te gustaría?
