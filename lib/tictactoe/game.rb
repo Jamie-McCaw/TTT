@@ -2,7 +2,6 @@ class Game
   attr_accessor :board, :computer
 
   def initialize(choice)
-    @menu = Menu.new
     @io = InputOutput.new
     @board = Board.new
     @player = 'X'
