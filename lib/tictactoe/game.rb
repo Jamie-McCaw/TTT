@@ -58,10 +58,14 @@ class Game
   end
 
   def draw_board
-    system('clear')
+    clear_screen
     @io.outputs_header t.welcome.message
     @io.outputs_header t.game.moves.message(@board.available_moves)
     @io.outputs @board.print_board
+  end
+
+  def clear_screen
+    system('clear')
   end
 
   def move(cell)
@@ -104,7 +108,7 @@ class Game
   def play_again
     @io.prints t.game.over.play_again
     if @io.input.downcase =~ (/yes|si/)
-      system('clear')
+      clear_screen
       Menu.new.game_setup
     else
       @io.outputs t.game.over.exit

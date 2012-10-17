@@ -1,6 +1,8 @@
+
+
 require 'r18n-core'
 
-R18n.default_places = '../../i18n/'
+R18n.default_places = File.expand_path(File.dirname(__FILE__)) + '/../../i18n/'
 R18n.set('en')
 
 include R18n::Helpers
